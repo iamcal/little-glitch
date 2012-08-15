@@ -1,0 +1,12 @@
+ErrorDocument 404 /little-glitch/404.php
+
+RewriteEngine on
+
+RewriteBase /little-glitch/
+
+RewriteRule	^meta.json$		meta.php	[L]
+RewriteRule	^edition/$		edition.php	[L]
+RewriteRule	^sample/$		sample.php	[L]
+RewriteRule	^validate_config/$	validate.php	[L]
+RewriteRule	^configure/$		configure.php	[L]
+

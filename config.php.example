@@ -1,0 +1,7 @@
+<?
+	$cfg = array(
+		'redir_url'		=> 'http://URL-TO-LITTLE-GLITCH/configure/?authed=1',
+		'glitch_api_base'	=> 'https://api.glitch.com',
+		'glitch_client_id'	=> 'xxx',
+		'glitch_client_secret'	=> 'xxx',
+	);

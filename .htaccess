@@ -4,9 +4,7 @@ RewriteEngine on
 
 RewriteBase /little-glitch/
 
-RewriteRule	^meta.json$		meta.php	[L]
-RewriteRule	^edition/$		edition.php	[L]
-RewriteRule	^sample/$		sample.php	[L]
-RewriteRule	^validate_config/$	validate.php	[L]
-RewriteRule	^configure/$		configure.php	[L]
-
+RewriteRule	^meta.json$		meta.php		[L]
+RewriteRule	^edition/$		edition.php		[L]
+RewriteRule	^sample/$		edition.php?sample=1	[L,QSA]
+RewriteRule	^configure/$		configure.php		[L]

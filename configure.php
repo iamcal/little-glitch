@@ -1,6 +1,5 @@
 <?
-	include('config.php');
-	include('curl.php');
+	include('init.php');
 
 
 	#
@@ -50,10 +49,14 @@
 		}
 
 
-		$base = $_COOKIE['berg_redir'];
-		$base .= "?config[access_token]=".urlencode($obj['access_token']);
+		$redir = $_COOKIE['berg_redir'];
+		$redir .= "?config[access_token]=".urlencode($obj['access_token']);
 
-		echo "ok - $base";
+		$edition = "{$cfg['edition_url']}?access_token=".urlencode($obj['access_token']);
+
+		echo "We should redir here: <a href=\"$redir\">$redir</a><br />";
+		echo "<br />";
+		echo "To see the edition instead: <a href=\"$edition\">$edition</a><br />";
 		exit;
 	}
 
@@ -76,20 +79,7 @@
 		'scope'		=> 'identity',
 	);
 
-	$url = $cfg['glitch_api_base']."/authorize?".http_build_query($args);
+	$url = $cfg['glitch_api_base']."/oauth2/authorize?".http_build_query($args);
 
 	header("location: $url");
 	exit;
-
-
-
-	#
-	# failure helper function
-	#
-
-	function fail_500($msg){
-
-		header("HTTP/1.0 500 Application error");
-		echo $msg;
-		exit;
-	}
